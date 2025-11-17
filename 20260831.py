@@ -1,12 +1,6 @@
-# Valid Parentheses
 # Date: 2026-08-31
+# Level: Medium
 
-# Given a string containing just '(', ')', '{', '}', '[' and ']',
-# determine if the input string is valid.
-# Example: '()[]{}' -> True, '([)]' -> False
-
-###########################################
-# Solution:
 def is_valid(s):
     stack = []
     mapping = {')': '(', '}': '{', ']': '['}
@@ -18,6 +12,25 @@ def is_valid(s):
             stack.append(char)
     return not stack
 
+print(is_valid('()[]{}'))
+print(is_valid('([)]'))
+print(is_valid('{[]}'))
+
+
+# A. True
+#    False
+#    True
+# B. True
+#    True
+#    True
+# C. False
+#    False
+#    True
+# D. True
+#    False
+#    False
+
 ###########################################
-# Explanation:
-# Use a stack to track opening brackets. When encountering a closing bracket, check if it matches the most recent opening bracket. Time: O(n), Space: O(n).
+# Answer: A
+# Explanation: Stack tracks opening brackets. '()[]{}' all match (True). '([)]' has mismatched order (False). '{[]}' properly nested (True).
+

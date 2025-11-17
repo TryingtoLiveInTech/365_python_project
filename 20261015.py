@@ -1,11 +1,6 @@
-# Implement strStr()
 # Date: 2026-10-15
+# Level: Medium
 
-# Find first occurrence of needle in haystack.
-# Example: haystack='hello', needle='ll' -> 2
-
-###########################################
-# Solution:
 def str_str(haystack, needle):
     if not needle:
         return 0
@@ -14,6 +9,25 @@ def str_str(haystack, needle):
             return i
     return -1
 
+print(str_str('hello', 'll'))
+print(str_str('aaaaa', 'bba'))
+print(str_str('', ''))
+
+
+# A. 2
+#    -1
+#    0
+# B. 2
+#    0
+#    0
+# C. 3
+#    -1
+#    0
+# D. 2
+#    -1
+#    -1
+
 ###########################################
-# Explanation:
-# Sliding window: check each position if substring matches needle. Time: O(n*m), Space: O(1).
+# Answer: A
+# Explanation: Sliding window finds first occurrence. 'll' found at index 2 in 'hello'. 'bba' not in 'aaaaa' returns -1. Empty needle returns 0.
+

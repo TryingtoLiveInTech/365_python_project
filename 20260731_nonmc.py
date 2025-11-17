@@ -1,6 +1,11 @@
+# Roman to Integer
 # Date: 2026-07-31
-# Level: Medium
 
+# Convert Roman numeral to integer.
+# Example: 'IV' -> 4, 'LVIII' -> 58
+
+###########################################
+# Solution:
 def roman_to_int(s):
     values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     total = 0
@@ -14,25 +19,6 @@ def roman_to_int(s):
         prev = value
     return total
 
-print(roman_to_int('IV'))
-print(roman_to_int('LVIII'))
-print(roman_to_int('MCMXCIV'))
-
-
-# A. 4
-#    58
-#    1994
-# B. 6
-#    58
-#    1994
-# C. 4
-#    58
-#    2216
-# D. 4
-#    53
-#    1994
-
 ###########################################
-# Answer: A
-# Explanation: Process right to left. If current < previous, subtract; else add. IV: 5-1=4. LVIII: 1+1+1+5+50=58. MCMXCIV: 5-1+100-10+1000-100+1000=1994.
-
+# Explanation:
+# Process from right to left. If current value < previous, subtract; otherwise add. Time: O(n), Space: O(1).

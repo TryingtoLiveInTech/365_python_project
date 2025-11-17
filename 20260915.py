@@ -1,11 +1,6 @@
-# Count and Say
 # Date: 2026-09-15
+# Level: Medium
 
-# Generate nth term of count-and-say sequence.
-# Example: n=4 -> '1211' (one 1, one 2, two 1s)
-
-###########################################
-# Solution:
 def count_and_say(n):
     if n == 1:
         return '1'
@@ -21,6 +16,25 @@ def count_and_say(n):
     result.append(str(count) + prev[-1])
     return ''.join(result)
 
+print(count_and_say(1))
+print(count_and_say(2))
+print(count_and_say(3))
+
+
+# A. '1'
+#    '11'
+#    '21'
+# B. '1'
+#    '1'
+#    '1'
+# C. '1'
+#    '11'
+#    '12'
+# D. '1'
+#    '2'
+#    '3'
+
 ###########################################
-# Explanation:
-# Recursively generate previous term, then count consecutive digits. Time: O(2^n), Space: O(2^n).
+# Answer: A
+# Explanation: n=1: '1'. n=2: count '1' -> '11'. n=3: count '11' -> two 1s -> '21'. Each term describes previous term.
+

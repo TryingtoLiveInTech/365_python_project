@@ -1,6 +1,11 @@
-# Date: 2026-05-15
-# Level: Medium
+# Add Binary
+# Date: 2026-01-15
 
+# Add two binary strings.
+# Example: '11' + '1' -> '100'
+
+###########################################
+# Solution:
 def add_binary(a, b):
     result = []
     carry = 0
@@ -17,20 +22,6 @@ def add_binary(a, b):
         carry = total // 2
     return ''.join(reversed(result))
 
-print(add_binary('101', '110'))
-print(add_binary('1111', '1'))
-
-
-# A. '1011'
-#    '10000'
-# B. '1011'
-#    '1110'
-# C. '10011'
-#    '10000'
-# D. '1011'
-#    '10001'
-
 ###########################################
-# Answer: A
-# Explanation: Binary addition with carry. '101' + '110' = '1011' (5+6=11), '1111' + '1' = '10000' (15+1=16).
-
+# Explanation:
+# Add from right to left with carry, similar to decimal addition. Time: O(max(len(a), len(b))), Space: O(max(len(a), len(b))).

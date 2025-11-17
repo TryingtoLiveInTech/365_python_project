@@ -1,26 +1,30 @@
-# Palindrome Number
 # Date: 2026-05-31
+# Level: Medium
 
-# Determine if an integer is a palindrome.
-# Example: 121 -> True, -121 -> False
-
-###########################################
-# Solution:
 def is_palindrome(x):
     if x < 0:
         return False
     return str(x) == str(x)[::-1]
 
-# Without converting to string:
-def is_palindrome(x):
-    if x < 0 or (x % 10 == 0 and x != 0):
-        return False
-    reverted = 0
-    while x > reverted:
-        reverted = reverted * 10 + x % 10
-        x //= 10
-    return x == reverted or x == reverted // 10
+print(is_palindrome(0))
+print(is_palindrome(123))
+print(is_palindrome(12321))
+
+
+# A. True
+#    False
+#    True
+# B. True
+#    True
+#    True
+# C. False
+#    False
+#    True
+# D. True
+#    False
+#    False
 
 ###########################################
-# Explanation:
-# Convert to string and reverse, or reverse half the number mathematically. Time: O(log n), Space: O(1) for math approach.
+# Answer: A
+# Explanation: Convert to string and compare with reverse. 0 reversed is '0' (True). 123 reversed is '321' != '123' (False). 12321 reversed is '12321' (True).
+

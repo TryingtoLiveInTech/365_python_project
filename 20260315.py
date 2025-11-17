@@ -1,15 +1,6 @@
-# Reverse String
 # Date: 2026-03-15
+# Level: Medium
 
-# Write a function that reverses a string.
-# Example: 'hello' -> 'olleh'
-
-###########################################
-# Solution:
-def reverse_string(s):
-    return s[::-1]
-
-# Or using two pointers:
 def reverse_string(s):
     s = list(s)
     left, right = 0, len(s) - 1
@@ -19,6 +10,19 @@ def reverse_string(s):
         right -= 1
     return ''.join(s)
 
+print(reverse_string('hello'))
+print(reverse_string('Python'))
+
+
+# A. 'olleh'
+#    'nohtyP'
+# B. 'hello'
+#    'Python'
+# C. 'olleh'
+#    'python'
+# D. Error
+
 ###########################################
-# Explanation:
-# Use slicing [::-1] for simplicity, or two-pointer technique. Time: O(n), Space: O(1) for two-pointer, O(n) for slicing.
+# Answer: A
+# Explanation: Two-pointer technique swaps characters from both ends until pointers meet. 'hello' reversed is 'olleh', 'Python' reversed is 'nohtyP'.
+

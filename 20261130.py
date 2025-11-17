@@ -1,11 +1,6 @@
-# First Unique Character
 # Date: 2026-11-30
+# Level: Medium
 
-# Find index of first non-repeating character.
-# Example: 'leetcode' -> 0 (l is first unique)
-
-###########################################
-# Solution:
 def first_uniq_char(s):
     from collections import Counter
     count = Counter(s)
@@ -14,6 +9,25 @@ def first_uniq_char(s):
             return i
     return -1
 
+print(first_uniq_char('leetcode'))
+print(first_uniq_char('aabb'))
+print(first_uniq_char('abcabc'))
+
+
+# A. 0
+#    -1
+#    -1
+# B. 0
+#    0
+#    -1
+# C. 1
+#    -1
+#    -1
+# D. 0
+#    -1
+#    0
+
 ###########################################
-# Explanation:
-# Count character frequencies, then find first character with count 1. Time: O(n), Space: O(n).
+# Answer: A
+# Explanation: Returns index of first character with frequency 1. 'leetcode': 'l' at index 0. 'aabb' and 'abcabc' have no unique characters, return -1.
+

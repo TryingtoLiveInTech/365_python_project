@@ -1,13 +1,6 @@
-# Merge Sorted Arrays
 # Date: 2026-08-15
+# Level: Medium
 
-# Merge two sorted arrays in-place.
-# nums1 has enough space at the end for nums2.
-# Example: nums1=[1,2,3,0,0,0], m=3, nums2=[2,5,6], n=3
-# Result: [1,2,2,3,5,6]
-
-###########################################
-# Solution:
 def merge(nums1, m, nums2, n):
     i, j, k = m - 1, n - 1, m + n - 1
     while j >= 0:
@@ -19,6 +12,17 @@ def merge(nums1, m, nums2, n):
             j -= 1
         k -= 1
 
+nums1 = [1, 2, 3, 0, 0, 0]
+merge(nums1, 3, [2, 5, 6], 3)
+print(nums1)
+
+
+# A. [1, 2, 2, 3, 5, 6]
+# B. [1, 2, 3, 2, 5, 6]
+# C. [2, 5, 6, 1, 2, 3]
+# D. [1, 2, 3, 0, 0, 0]
+
 ###########################################
-# Explanation:
-# Start from the end of both arrays and merge backwards. Time: O(m+n), Space: O(1).
+# Answer: A
+# Explanation: Merge backwards from end of arrays. Compare elements and place larger at end, working backwards. Result: [1, 2, 2, 3, 5, 6].
+

@@ -1,6 +1,11 @@
-# Date: 2026-12-15
-# Level: Medium
+# Sqrt(x)
+# Date: 2026-06-30
 
+# Compute square root of x (integer part only).
+# Example: 4 -> 2, 8 -> 2
+
+###########################################
+# Solution:
 def my_sqrt(x):
     if x < 2:
         return x
@@ -15,25 +20,6 @@ def my_sqrt(x):
             right = mid - 1
     return right
 
-print(my_sqrt(4))
-print(my_sqrt(8))
-print(my_sqrt(1))
-
-
-# A. 2
-#    2
-#    1
-# B. 2
-#    3
-#    1
-# C. 4
-#    2
-#    1
-# D. 2
-#    2
-#    0
-
 ###########################################
-# Answer: A
-# Explanation: Binary search for integer square root. sqrt(4)=2, sqrt(8)=2 (integer part), sqrt(1)=1. Returns largest integer whose square <= x.
-
+# Explanation:
+# Binary search between 1 and x//2. Time: O(log x), Space: O(1).
